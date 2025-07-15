@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
           className="max-w-4xl mx-auto"
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -31,66 +31,66 @@ const Hero: React.FC = () => {
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12"
+            className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4 md:space-x-6 mb-8 sm:mb-12 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="relative group">
+            <div className="relative group w-full sm:w-auto">
               <a
                 href="mailto:skhade5@asu.edu"
-                className="flex items-center space-x-2 px-6 py-3 bg-maroon-600 text-white rounded-full hover:bg-maroon-700 transition-colors"
+                className="flex items-center justify-center space-x-2 px-4 sm:px-6 py-3 bg-maroon-600 text-white rounded-full hover:bg-maroon-700 transition-colors w-full sm:w-auto"
               >
-                <Mail className="w-5 h-5" />
-                <span>Contact Me</span>
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-sm sm:text-base">Contact Me</span>
               </a>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap">
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap hidden sm:block">
                 Looking forward to connect with you!
                 <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-800 rotate-45"></div>
               </div>
             </div>
             
-            <div className="relative group">
+            <div className="relative group w-full sm:w-auto">
               <a
                 href="https://linkedin.com/in/SAKSHI-KHADE"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-6 py-3 border-2 border-maroon-600 text-maroon-600 dark:text-gold-400 dark:border-gold-400 rounded-full hover:bg-maroon-600 hover:text-white dark:hover:bg-gold-400 dark:hover:text-gray-900 transition-colors"
+                className="flex items-center justify-center space-x-2 px-4 sm:px-6 py-3 border-2 border-maroon-600 text-maroon-600 dark:text-gold-400 dark:border-gold-400 rounded-full hover:bg-maroon-600 hover:text-white dark:hover:bg-gold-400 dark:hover:text-gray-900 transition-colors w-full sm:w-auto"
               >
-                <Linkedin className="w-5 h-5" />
-                <span>LinkedIn</span>
+                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-sm sm:text-base">LinkedIn</span>
               </a>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap">
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap hidden sm:block">
                 Let's connect professionally!
                 <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-800 rotate-45"></div>
               </div>
             </div>
             
-            <div className="relative group">
+            <div className="relative group w-full sm:w-auto">
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-6 py-3 bg-maroon-600 text-white rounded-full hover:bg-maroon-700 transition-colors"
+                className="flex items-center justify-center space-x-2 px-4 sm:px-6 py-3 bg-maroon-600 text-white rounded-full hover:bg-maroon-700 transition-colors w-full sm:w-auto"
               >
-                <FileText className="w-5 h-5" />
-                <span>Resume</span>
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-sm sm:text-base">Resume</span>
               </a>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap">
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap hidden sm:block">
                 Check out my experience and skills!
                 <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-800 rotate-45"></div>
               </div>
             </div>
             
-            <div className="relative group">
+            <div className="relative group w-full sm:w-auto">
               <a
                 href="mailto:skhade5@asu.edu"
-                className="flex items-center space-x-2 px-6 py-3 border-2 border-maroon-600 text-maroon-600 dark:text-gold-400 dark:border-gold-400 rounded-full hover:bg-maroon-600 hover:text-white dark:hover:bg-gold-400 dark:hover:text-gray-900 transition-colors"
+                className="flex items-center justify-center space-x-2 px-4 sm:px-6 py-3 border-2 border-maroon-600 text-maroon-600 dark:text-gold-400 dark:border-gold-400 rounded-full hover:bg-maroon-600 hover:text-white dark:hover:bg-gold-400 dark:hover:text-gray-900 transition-colors w-full sm:w-auto"
               >
-                <Briefcase className="w-5 h-5" />
-                <span>Hire me!</span>
+                <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-sm sm:text-base">Hire me!</span>
               </a>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap">
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap hidden sm:block">
                 Ready to join your team!
                 <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-800 rotate-45"></div>
               </div>
@@ -99,13 +99,13 @@ const Hero: React.FC = () => {
         </motion.div>
         
         <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
           <div className="inline-block animate-bounce">
-            <ChevronDown className="w-6 h-6 text-gray-400" />
+            <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
           </div>
         </motion.div>
       </div>

@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -59,30 +59,30 @@ const Contact: React.FC = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">
             Get In Touch
           </h2>
           
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
             >
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                   Let's Connect
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
                   I'm always interested in discussing new opportunities, 
                   innovative projects, or simply connecting with fellow 
                   professionals in the AI and robotics field.
                 </p>
               </div>
               
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {contactInfo.map((item, index) => {
                   const Icon = item.icon;
                   return (
@@ -91,18 +91,18 @@ const Contact: React.FC = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={isInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                      className="flex items-center space-x-4"
+                      className="flex items-center space-x-3 sm:space-x-4"
                     >
-                      <div className="p-3 bg-maroon-100 dark:bg-maroon-900 rounded-lg">
-                        <Icon className="w-5 h-5 text-maroon-600 dark:text-maroon-300" />
+                      <div className="p-2 sm:p-3 bg-maroon-100 dark:bg-maroon-900 rounded-lg flex-shrink-0">
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-maroon-600 dark:text-maroon-300" />
                       </div>
-                      <div>
-                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">
                           {item.label}
                         </p>
                         <a
                           href={item.link}
-                          className="text-gray-900 dark:text-white hover:text-maroon-600 dark:hover:text-gold-400 transition-colors"
+                          className="text-gray-900 dark:text-white hover:text-maroon-600 dark:hover:text-gold-400 transition-colors text-sm sm:text-base break-all"
                           target={item.link.startsWith('http') ? '_blank' : undefined}
                           rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                         >
@@ -120,9 +120,9 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg"
+              className="bg-white dark:bg-gray-900 p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg"
             >
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Name
@@ -131,11 +131,11 @@ const Contact: React.FC = () => {
                     type="text"
                     id="name"
                     {...register('name', { required: 'Name is required' })}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-maroon-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-maroon-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm sm:text-base"
                     placeholder="Your name"
                   />
                   {errors.name && (
-                    <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                    <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-red-600 dark:text-red-400">
                       {errors.name.message}
                     </p>
                   )}
@@ -155,11 +155,11 @@ const Contact: React.FC = () => {
                         message: 'Invalid email address'
                       }
                     })}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-maroon-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-maroon-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm sm:text-base"
                     placeholder="your.email@example.com"
                   />
                   {errors.email && (
-                    <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                    <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-red-600 dark:text-red-400">
                       {errors.email.message}
                     </p>
                   )}
@@ -171,13 +171,13 @@ const Contact: React.FC = () => {
                   </label>
                   <textarea
                     id="message"
-                    rows={5}
+                    rows={4}
                     {...register('message', { required: 'Message is required' })}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-maroon-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-maroon-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm sm:text-base resize-none"
                     placeholder="Tell me about your project or just say hello!"
                   />
                   {errors.message && (
-                    <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                    <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-red-600 dark:text-red-400">
                       {errors.message.message}
                     </p>
                   )}
@@ -185,9 +185,9 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-maroon-600 text-white rounded-lg hover:bg-maroon-700 transition-colors"
+                  className="w-full flex items-center justify-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-maroon-600 text-white rounded-lg hover:bg-maroon-700 transition-colors text-sm sm:text-base"
                 >
-                  <Send className="w-5 h-5" />
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span>Send Message</span>
                 </button>
               </form>

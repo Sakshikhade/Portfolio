@@ -28,13 +28,13 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section className="h-full flex items-center justify-center py-20 bg-gray-50 dark:bg-gray-800">
+    <section className="h-full flex items-center justify-center py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+          className="text-3xl sm:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12"
         >
           Technical Skills
         </motion.h2>
@@ -44,7 +44,8 @@ const Skills: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">{skillCategories.map((category, index) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            {skillCategories.map((category, index) => {
               const Icon = category.icon;
               return (
                 <motion.div
@@ -52,22 +53,22 @@ const Skills: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                  className="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
                 >
-                  <div className="flex items-center mb-4">
-                    <div className="p-3 bg-maroon-100 dark:bg-maroon-900 rounded-lg">
-                      <Icon className="w-6 h-6 text-maroon-600 dark:text-maroon-300" />
+                  <div className="flex items-center mb-3 sm:mb-4">
+                    <div className="p-2 sm:p-3 bg-maroon-100 dark:bg-maroon-900 rounded-lg flex-shrink-0">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-maroon-600 dark:text-maroon-300" />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white ml-2 sm:ml-3">
                       {category.title}
                     </h3>
                   </div>
                   
-                  <div className="space-y-2">
+                  <div className="space-y-1 sm:space-y-2">
                     {category.skills.map((skill) => (
                       <div
                         key={skill}
-                        className="text-sm text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 px-3 py-2 rounded-lg"
+                        className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 px-2 sm:px-3 py-1 sm:py-2 rounded-lg"
                       >
                         {skill}
                       </div>

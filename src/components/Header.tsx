@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => {
         ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg' 
         : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
         <div className="relative group">
           <a 
             href="#hero" 
@@ -48,15 +48,15 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => {
               e.preventDefault();
               handleNavClick('hero');
             }}
-            className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-maroon-600 to-maroon-700 dark:from-gold-400 dark:to-gold-500 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-maroon-600 to-maroon-700 dark:from-gold-400 dark:to-gold-500 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
           >
-            <span className="text-sm font-bold text-white dark:text-gray-900">
+            <span className="text-xs sm:text-sm font-bold text-white dark:text-gray-900">
               SK
             </span>
           </a>
           
           {/* Tooltip */}
-          <div className="absolute top-full left-0 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 w-64 text-center">
+          <div className="absolute top-full left-0 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 w-64 text-center hidden sm:block">
             Take a look at my resume, or even download it! I'd appreciate that.<br />
             Thank you.
             <div className="absolute -top-1 left-6 w-2 h-2 bg-gray-900 dark:bg-gray-800 rotate-45"></div>
@@ -86,13 +86,13 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => {
           ))}
         </nav>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 sm:space-x-4">
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle theme"
           >
-            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            {isDark ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
           </button>
           
           <button
@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -117,10 +117,10 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => {
                   e.preventDefault();
                   handleNavClick(item.id);
                 }}
-                className={`transition-all duration-300 ${
+                className={`transition-all duration-300 py-2 px-3 rounded-lg ${
                   activeSection === item.id
-                    ? 'text-maroon-600 dark:text-gold-400 font-semibold'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-maroon-600 dark:hover:text-gold-400'
+                    ? 'text-maroon-600 dark:text-gold-400 font-semibold bg-maroon-50 dark:bg-maroon-900/20'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-maroon-600 dark:hover:text-gold-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                 }`}
               >
                 {item.label}
